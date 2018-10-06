@@ -1,0 +1,13 @@
+{% extends 'cert/base.html' %}
+
+{% block content %}
+{% for cert in certs %}
+    <div class = cert>
+        <p>Created: {{ cert.created_date }}
+        Expiry: {{ cert.expiry_date }}
+	<h1><a href="{% url 'cert_detail' pk=cert.pk %}">{{ cert.title }}</a></h1>
+        {{ cert.text|linebreaksbr }}
+        {{ cert.system|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+{% endblock %}

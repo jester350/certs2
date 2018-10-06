@@ -1,0 +1,14 @@
+{% extends 'cert/base.html' %}
+{% block content %}
+    <div class=cert>
+	{% if cert.published_date %}
+            <div class="date">
+                {{ cert.published_date }}
+            </div>
+	{% endif %}
+        <h1>{{ certs.system }}</h1>
+        <p>{{ certs.text|linebreaksbr }}</p>
+	<p>{{ certs.created_date|linebreaksbr }}</p>
+	<p>{{ certs.expiry_date|linebreaksbr }}</p>
+    </div>
+{% endblock %}
